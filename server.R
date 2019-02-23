@@ -70,6 +70,7 @@ function(input, output, session){
     if(stringr::str_length(input$reg_username)>5 && 
        stringr::str_length(input$reg_password)>5 && 
        input$reg_password==input$reg_password_confirm &&
+       input$user_aagree == 1 &&
        isValidEmail(input$reg_email)
        ){
       dbWriteTable(conn_db, "users", users, append=TRUE)

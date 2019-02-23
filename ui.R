@@ -92,11 +92,12 @@ fluidPage(
                                              textInput("reg_orgid", "your Org ID:"),
                                              passwordInput("reg_password", "Password:"),
                                              passwordInput("reg_password_confirm", "Confirm Password:"),
+                                             print("This is user agreement"),
+                                             shinyWidgets::switchInput("user_aagree","Agree?", value = FALSE),
                                              shinyWidgets::switchInput("auth_campaign","Auth Campaign", value = FALSE),
                                              shinyWidgets::switchInput("auth_clases","Auth Clases", value = FALSE),
                                              shinyWidgets::switchInput("auth_users","Auth Users", value = FALSE),
                                              shinyWidgets::switchInput("auth_admin","Auth Admin", value = FALSE),
-                                             textOutput("User Agreement"),
                                              actionButton("register", "Register")
                                            ),
                                            tags$p(),
@@ -104,6 +105,11 @@ fluidPage(
                                              htmlOutput("registerInfo")
                                            )
                                   ),
+                                  tabPanel("Edit User",  value = "panel_editusers",
+                                           fluidPage(
+                                             titlePanel("Edit Users")
+                                           )
+                                           ),
                                   tabPanel("Init Users",  value = "panel_init_users",
                                            fluidPage(
                                              actionButton("init_users", "Init Users"),
