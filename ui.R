@@ -107,7 +107,9 @@ fluidPage(
                                   ),
                                   tabPanel("Edit User",  value = "panel_editusers",
                                            fluidPage(
-                                             titlePanel("Edit Users")
+                                             actionButton("init_users", "Init Users"),
+                                             actionButton("refresh_users", "Refrds Users"),
+                                             DT::dataTableOutput("query_users")
                                            )
                                            ),
                                   tabPanel("Init Users",  value = "panel_init_users",
